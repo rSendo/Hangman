@@ -60,3 +60,25 @@ body {
 .reset:hover {
     color: white;
 }
+#category {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 300px;    
+}
+
+footer {
+    margin: 20px;
+    text-align: center;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid lightgray;
+    cursor: pointer;
+    border-radius: 15px;
+}

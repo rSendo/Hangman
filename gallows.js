@@ -1,5 +1,29 @@
-var haslo = "Bez pracy nie ma kołaczy";
+var hasla = [
+  "Terry Goodkind",
+  "Miecz prawdy",
+  "Pierwsza Spowiedniczka",
+  "Spowiedniczka",
+  "Pierwsze prawo magii",
+  "Kamień łez",
+  "Bractwo czystej krwi",
+  "Świątynia wichrów",
+  "Dusza ognia",
+  "Nadzieja pokonanych",
+  "Filary świata",
+  "Bezbronne imperium",
+  "Pożoga",
+  "Fantom",
+  "Wróżebna machina",
+  "Trzecie królestwo",
+  "Skradzione dusze",
+  "Dług wdzięczności",
+];
+
+var x = Math.floor((Math.random() * hasla.length));
+
+var haslo = hasla[x]
 haslo = haslo.toUpperCase();
+
 
 var dlugosc = haslo.length;
 var ile_bledow = 0;
@@ -18,6 +42,13 @@ for (i=0; i<dlugosc; i++) {
 
 function wypisz_haslo() {
         document.getElementById("password").innerHTML = haslo1;
+}
+
+function pokazHaslo() {
+    document.getElementById('password').innerHTML = haslo;
+}
+function ukryjHaslo() {
+    document.getElementById('password').innerHTML = haslo1;
 }
 
 window.onload = start;
@@ -107,9 +138,9 @@ function sprawdz(nr) {
         
     //błąd
         ile_bledow++;
-       var obraz = "img/g"+ ile_bledow +".png";
+      var obraz = "img/g"+ile_bledow+".png";
        
-      var obrazek = document.getElementById("gallows").innerHTML = '<img src="'+obraz+'" alt=""/>';
+      var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
        
 
     }

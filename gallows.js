@@ -19,13 +19,6 @@ var hasla = [
   "Dług wdzięczności",
 ];
 
-var x = Math.floor((Math.random() * hasla.length));
-
-var haslo = hasla[x]
-haslo = haslo.toUpperCase();
-
-
-var dlugosc = haslo.length;
 var ile_bledow = 0;
 
 var yes = new Audio("yes.wav");
@@ -33,25 +26,8 @@ var no = new Audio("no.wav");
 var win = new Audio("win.wav");
 var fail = new Audio("fail.wav");
 
-var haslo1 = "";
-
-for (i=0; i<dlugosc; i++) {
-        if(haslo.charAt(i)==" ") haslo1 = haslo1 + " ";
-        else haslo1 = haslo1 + "-";
-    }
-
-function wypisz_haslo() {
-        document.getElementById("password").innerHTML = haslo1;
-}
-
-function pokazHaslo() {
-    document.getElementById('password').innerHTML = haslo;
-}
-function ukryjHaslo() {
-    document.getElementById('password').innerHTML = haslo1;
-}
-
-window.onload = start;
+var haslo;
+var haslo1;
 
 var litery = new Array(35);
 litery[0] = "A";
@@ -90,17 +66,45 @@ litery[32] = "Z";
 litery[33] = "Ź";
 litery[34] = "Ż";
 
+window.onload = start;
 
 function start() {
-   var tresc_diva = "";
-   for (i=0; i<=34; i++) {
-       var element = "lit" + i;
-       tresc_diva = tresc_diva + '<div class="litera" id="'+element+'" onclick="sprawdz('+i+')">'+litery[i]+'</div>';
-       if ((i+1) % 7 ==0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
-   }
-    document.getElementById("alphabet").innerHTML = tresc_diva;
-    
+    wypisz_litery();
+    losuj_haslo();
     wypisz_haslo();
+}
+
+function wypisz_litery() {
+    var tresc_diva = "";
+    for (i=0; i<=34; i++) {
+        var element = "lit" + i;
+        tresc_diva = tresc_diva + '<div class="litera" id="'+element+'" onclick="sprawdz('+i+')">'+litery[i]+'</div>';
+        if ((i+1) % 7 ==0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
+    }
+     document.getElementById("alphabet").innerHTML = tresc_diva; 
+}
+
+function losuj_haslo() {
+    var x = Math.floor((Math.random() * hasla.length));
+    haslo = hasla[x]
+    haslo = haslo.toUpperCase();
+    haslo1 = ""
+    for (var i=0; i<haslo.length; i++) {
+        if(haslo.charAt(i)==" ") haslo1 = haslo1 + " ";
+        else haslo1 = haslo1 + "-";
+    }
+}
+
+function wypisz_haslo() {
+    document.getElementById("password").innerHTML = haslo1;
+}
+
+function pokazHaslo() {
+    document.getElementById('password').innerHTML = haslo;
+}
+
+function ukryjHaslo() {
+    document.getElementById('password').innerHTML = haslo1;
 }
 
 String.prototype.ustawZnak = function(miejsce, znak) {
@@ -110,14 +114,13 @@ String.prototype.ustawZnak = function(miejsce, znak) {
 
 function sprawdz(nr) {
     var trafiona = false;
-    for(i=0; i<dlugosc; i++) {
-        if (haslo.charAt(i) == litery[nr])
-            {
-                haslo1 = haslo1.ustawZnak(i,litery[nr]);
-                trafiona = true;
-            }
+    for (var i=0; i<haslo.length; i++) {
+        if (haslo.charAt(i) == litery[nr]) {
+            haslo1 = haslo1.ustawZnak(i,litery[nr]);
+            trafiona = true;
+        }
     }
-    if(trafiona == true) {
+    if (trafiona == true) {
         yes.play();
         var element = "lit" + nr;
         document.getElementById(element).style.background = "#003300"; 
@@ -126,8 +129,7 @@ function sprawdz(nr) {
         document.getElementById(element).style.cursor = "default"; 
         
         wypisz_haslo();
-    }
-    else {
+    } else {
         no.play();
         var element = "lit" + nr;
         document.getElementById(element).style.background = "#330000";    
@@ -136,22 +138,21 @@ function sprawdz(nr) {
         document.getElementById(element).style.cursor = "default";
         document.getElementById(element).setAttribute("onclick",";");
         
-    //błąd
+        //błąd
         ile_bledow++;
-      var obraz = "img/g"+ile_bledow+".png";
+        var obraz = "img/g"+ile_bledow+".png";
        
-      var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
-       
-
+        var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
     }
     //wygrana
     if (haslo == haslo1) {
-       win.play(); document.getElementById("alphabet").innerHTML = 'Wygrana! Podano hasło: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
-}
+       win.play();
+       document.getElementById("alphabet").innerHTML = 'Wygrana! Podano hasło: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+    }
     
     //przegrana
     if (ile_bledow>=9) {
-         fail.play();
+        fail.play();
         document.getElementById("alphabet").innerHTML = 'Przegrana! Prawidłowe hasło to: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
     }
 }

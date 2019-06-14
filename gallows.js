@@ -1,31 +1,116 @@
 var hasla = [
-  "Terry Goodkind",
-  "Miecz prawdy",
-  "Pierwsza Spowiedniczka",
-  "Spowiedniczka",
-  "Pierwsze prawo magii",
-  "Kamień łez",
-  "Bractwo czystej krwi",
-  "Świątynia wichrów",
-  "Dusza ognia",
-  "Nadzieja pokonanych",
-  "Filary świata",
-  "Bezbronne imperium",
-  "Pożoga",
-  "Fantom",
-  "Wróżebna machina",
-  "Trzecie królestwo",
-  "Skradzione dusze",
-  "Dług wdzięczności",
-];
+    //przysłowia o informatyce
+    [
+      "Dopóty dysk dane nosi póki mu bootsector nie padnie",
+      "Jeden Celeron kompa nie czyni",
+      "Nie wywołuj przerwań z BIOSu",
+      "Mądry Polak po errorze",
+      "Jak trwoga to do serwisu",
+      "Nie wszystko dioda co się świeci",
+      "Gdzie dysków sześć tam dużo formatowania",
+      "Komu w drogę temu laptop",
+      "Co dwie kopie to nie jedna",
+      "Nie taki deamon straszny jak go killują",
+      "Tam gdzie deamon mówi shutdown",
+      "Z próżnego i recover nie odzyska",
+      "Nie resetuj drugiemu co tobie nie miło",
+      "Nie chwal systemu przed pierwszym padem",
+      "Co wolno Adminowi to nie Użytkownikowi",
+      "UPeeSy strzelają, Admin baty znosi",
+      "Gdyby Pani nie skakała to by kabli nie wyrwała",
+      "Ciągnie się jak backup nad ranem",
+      "Bajt Ci w port",
+      "Użytkownika myśl nie tyka",
+      "Jedni wkładają śmieci do kubła inni do sieci"
+    ],
+        //przysłowia polskie
+    [
+      "Aby do wiosny",
+      "Aksamity atłasy sławy nie czynią",
+      "Albo rybki albo akwarium",
+      "Ambroży w grudniu uprawia ugory",
+      "Apetyt rośnie w miarę jedzenia",
+      "Atak jest najlepszą obroną",
+      "Bez matki nie ma chatki",
+      "Bogatemu to i byk się ocieli",
+      "Bo pić trzeba umieć",
+      "Cieszyć się jak Ruski z roweru",
+      "Co łysemu po grzebieniu",
+      "Czyj nasiew tego plon",
+      "Dla głupiego każdy dzień święto",
+      "Dobry początek to połowa roboty",
+      "Głupota ludzka nie ma granic",
+      "I kwaśne jabłko robak toczy",
+      "Jajko mądrzejsze od kury",
+      "Jak cię widzą, tak cię piszą",
+      "Jak krew w piach",
+      "Jaka praca taka płaca",
+      "Jaki pan taki kram",
+      "Każda krowa swoje cielę liże",
+      "Każde grabie do siebie grabią",
+      "Każdy kogut na swych śmieciach śmielszy",
+      "Kochanego ciała nigdy za wiele",
+      "Kto rano wstaje ten jest niewyspany",
+      "Lepiej byle jak siedzieć niż dobrze stać",
+      "Lepiej dosadzić niż przesadzić",
+      "Lepiej się ukłonić głowie niż ogonowi",
+      "Lepsza jedna panna niż cztery wdowy",
+      "Lepszy funt rozumu niż cetnar dowcipu",
+      "Ładna buzia to połowa posagu",
+      "Łatwo być hojnym z cudzego",
+      "Łyżka dziegciu beczkę miodu zepsuje",
+      "Mówił dziad do obrazu a ten do niego ani razu",
+      "Na głupiej głowie i włos się nie utrzyma",
+      "Najgorszy jest diabeł wtenczas kiedy się modli.",
+      "Nic mu nie będzie, bo głupi",
+      "Nie masz cwaniaka nad Warszawiaka",
+      "Prawdziwa wiedza to znajomość przyczyn",
+      "Rozmówił się jak gęś z prosięciem",
+      "Skleroza nie choroba tylko nogi bolą",
+      "Słowo się rzekło kobyłka u płota",
+      "Swojego nie puszczaj po cudze nie sięgaj",
+      "Szlachcic na zagrodzie równy wojewodzie",
+      "Tanie kupisz psom wyrzucisz",
+      "Trud człowieczy czas niweczy",
+      "Tylko trzewik wie że pończocha dziurawa",
+      "Ubogiemu łacniej być dobrym",
+      "Ucieka świńskim truchtem",
+      "Uczepił się jak pchła kożucha",
+      "Wielki jak brzoza a głupi jak koza",
+      "Wysoki do nieba a głupi jak trzeba",
+      "Zrób komu dobrze to ci da po ziobrze",
+      "Mów do dupy to cię osra",
+      "Pasuje jak kij do dupy",
+      "Śpiewa jakby mu sierp z dupy ciągnął",
+      "Wyżej dupy nie podskoczysz"
+    ],     
+        //przysłowia o kotach
+    [
+      "Bodaj tak kot płakał",
+      "Jak kot z pęcherzem lata",
+      "Jeden kot stada myszy się nie boi",
+      "Kot się myje będzie deszcz",
+      "Nie dla kota sadło",
+      "Pierwsze koty za płoty",
+      "Wstyd kota w ogon",
+      "Gdy kota myszy nie czują śmiało sobie tańcują",
+      "Gdzie czuje kota tam mysz nie chrobota",
+      "Każdy kot w nocy czarny",
+      "Wykręcić kota ogonem",
+      "Sprawić kocią muzykę",
+      "Pytali się kotka czy śmietanka słodka",
+      "Hałaśliwy kot nigdy nie schwyci myszy",
+      "Kiedy kot odchodzi mysz wraca",
+      "Zwąchał kot kiełbasę a nie zwąchał kija",
+      "Kucharz zawinił kota ukarali",
+      "Kotkowi żart a myszce śmierć",
+      "Kota na myszy na zające charta",
+      "Nie ciągnij kota za ogon to cię nie zadrapie",
+      "Iść kocią łapką",
+      "Gadałby kotek ale język krotek"
+    ]
+ ];
 
-var x = Math.floor((Math.random() * hasla.length));
-
-var haslo = hasla[x]
-haslo = haslo.toUpperCase();
-
-
-var dlugosc = haslo.length;
 var ile_bledow = 0;
 
 var yes = new Audio("yes.wav");
@@ -33,25 +118,8 @@ var no = new Audio("no.wav");
 var win = new Audio("win.wav");
 var fail = new Audio("fail.wav");
 
-var haslo1 = "";
-
-for (i=0; i<dlugosc; i++) {
-        if(haslo.charAt(i)==" ") haslo1 = haslo1 + " ";
-        else haslo1 = haslo1 + "-";
-    }
-
-function wypisz_haslo() {
-        document.getElementById("password").innerHTML = haslo1;
-}
-
-function pokazHaslo() {
-    document.getElementById('password').innerHTML = haslo;
-}
-function ukryjHaslo() {
-    document.getElementById('password').innerHTML = haslo1;
-}
-
-window.onload = start;
+var haslo;
+var haslo1;
 
 var litery = new Array(35);
 litery[0] = "A";
@@ -90,17 +158,49 @@ litery[32] = "Z";
 litery[33] = "Ź";
 litery[34] = "Ż";
 
+window.onload = start;
 
 function start() {
-   var tresc_diva = "";
-   for (i=0; i<=34; i++) {
-       var element = "lit" + i;
-       tresc_diva = tresc_diva + '<div class="litera" id="'+element+'" onclick="sprawdz('+i+')">'+litery[i]+'</div>';
-       if ((i+1) % 7 ==0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
-   }
-    document.getElementById("alphabet").innerHTML = tresc_diva;
-    
+    wypisz_litery();
+    losuj_haslo();
     wypisz_haslo();
+}
+
+function wypisz_litery() {
+    var tresc_diva = "";
+    for (i=0; i<=34; i++) {
+        var element = "lit" + i;
+        tresc_diva = tresc_diva + '<div class="litera" id="'+element+'" onclick="sprawdz('+i+')">'+litery[i]+'</div>';
+<<<<<<< HEAD
+        if ((i+1) % 7 == 0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
+=======
+        if ((i+1) % 7 ==0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
+>>>>>>> 33a46b2af5e861225026d1ba602dfb5315a570fc
+    }
+     document.getElementById("alphabet").innerHTML = tresc_diva; 
+}
+
+function losuj_haslo() {
+    var x = Math.floor((Math.random() * hasla.length));
+    haslo = hasla[x]
+    haslo = haslo.toUpperCase();
+    haslo1 = ""
+    for (var i=0; i<haslo.length; i++) {
+        if(haslo.charAt(i)==" ") haslo1 = haslo1 + " ";
+        else haslo1 = haslo1 + "-";
+    }
+}
+
+function wypisz_haslo() {
+    document.getElementById("password").innerHTML = haslo1;
+}
+
+function pokazHaslo() {
+    document.getElementById('password').innerHTML = haslo;
+}
+
+function ukryjHaslo() {
+    document.getElementById('password').innerHTML = haslo1;
 }
 
 String.prototype.ustawZnak = function(miejsce, znak) {
@@ -110,14 +210,13 @@ String.prototype.ustawZnak = function(miejsce, znak) {
 
 function sprawdz(nr) {
     var trafiona = false;
-    for(i=0; i<dlugosc; i++) {
-        if (haslo.charAt(i) == litery[nr])
-            {
-                haslo1 = haslo1.ustawZnak(i,litery[nr]);
-                trafiona = true;
-            }
+    for (var i=0; i<haslo.length; i++) {
+        if (haslo.charAt(i) == litery[nr]) {
+            haslo1 = haslo1.ustawZnak(i,litery[nr]);
+            trafiona = true;
+        }
     }
-    if(trafiona == true) {
+    if (trafiona == true) {
         yes.play();
         var element = "lit" + nr;
         document.getElementById(element).style.background = "#003300"; 
@@ -126,8 +225,7 @@ function sprawdz(nr) {
         document.getElementById(element).style.cursor = "default"; 
         
         wypisz_haslo();
-    }
-    else {
+    } else {
         no.play();
         var element = "lit" + nr;
         document.getElementById(element).style.background = "#330000";    
@@ -136,22 +234,21 @@ function sprawdz(nr) {
         document.getElementById(element).style.cursor = "default";
         document.getElementById(element).setAttribute("onclick",";");
         
-    //błąd
+        //błąd
         ile_bledow++;
-      var obraz = "img/g"+ile_bledow+".png";
+        var obraz = "img/g"+ile_bledow+".png";
        
-      var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
-       
-
+        var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
     }
     //wygrana
     if (haslo == haslo1) {
-       win.play(); document.getElementById("alphabet").innerHTML = 'Wygrana! Podano hasło: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
-}
+       win.play();
+       document.getElementById("alphabet").innerHTML = 'Wygrana! Podano hasło: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+    }
     
     //przegrana
     if (ile_bledow>=9) {
-         fail.play();
+        fail.play();
         document.getElementById("alphabet").innerHTML = 'Przegrana! Prawidłowe hasło to: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
     }
 }

@@ -244,12 +244,12 @@ function sprawdz(nr) {
     //wygrana
     if (haslo == haslo1) {
        win.play();
-       document.getElementById("alphabet").innerHTML = 'Wygrana! Podano hasło: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+       document.getElementById("alphabet").innerHTML = 'Wygrana! Podano hasło: <br />'+haslo+'<br /><br /><span class="reset" onclick="ustaw_plansze(\'koty\')">JESZCZE RAZ?</span>';
     }
     
     //przegrana
     if (ile_bledow>=9) {
         fail.play();
-        document.getElementById("alphabet").innerHTML = 'Przegrana! Prawidłowe hasło to: <br />'+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+        document.getElementById("alphabet").innerHTML = 'Przegrana! Prawidłowe hasło to: <br />'+haslo+'<br /><br /><span class="reset" onclick="ustaw_plansze(\'koty\')">JESZCZE RAZ?</span>';
     }
 }

@@ -1,6 +1,5 @@
-var hasla = [
-    //przysłowia o informatyce
-    [
+var hasla = {
+    informatyka: [
       "Dopóty dysk dane nosi póki mu bootsector nie padnie",
       "Jeden Celeron kompa nie czyni",
       "Nie wywołuj przerwań z BIOSu",
@@ -23,8 +22,7 @@ var hasla = [
       "Użytkownika myśl nie tyka",
       "Jedni wkładają śmieci do kubła inni do sieci"
     ],
-        //przysłowia polskie
-    [
+    polskie: [
       "Aby do wiosny",
       "Aksamity atłasy sławy nie czynią",
       "Albo rybki albo akwarium",
@@ -84,8 +82,7 @@ var hasla = [
       "Śpiewa jakby mu sierp z dupy ciągnął",
       "Wyżej dupy nie podskoczysz"
     ],     
-        //przysłowia o kotach
-    [
+    koty: [
       "Bodaj tak kot płakał",
       "Jak kot z pęcherzem lata",
       "Jeden kot stada myszy się nie boi",
@@ -109,9 +106,7 @@ var hasla = [
       "Iść kocią łapką",
       "Gadałby kotek ale język krotek"
     ]
- ];
-
-var ile_bledow = 0;
+}
 
 var yes = new Audio("yes.wav");
 var no = new Audio("no.wav");
@@ -120,6 +115,7 @@ var fail = new Audio("fail.wav");
 
 var haslo;
 var haslo1;
+var ile_bledow;
 
 var litery = new Array(35);
 litery[0] = "A";
@@ -161,9 +157,15 @@ litery[34] = "Ż";
 window.onload = start;
 
 function start() {
+    ustaw_plansze('koty');
+}
+
+function ustaw_plansze(category) {
+    ile_bledow = 0;
     wypisz_litery();
-    losuj_haslo();
+    losuj_haslo(category);
     wypisz_haslo();
+    pokaz_wisielca();
 }
 
 function wypisz_litery() {
@@ -173,12 +175,12 @@ function wypisz_litery() {
         tresc_diva = tresc_diva + '<div class="litera" id="'+element+'" onclick="sprawdz('+i+')">'+litery[i]+'</div>';
         if ((i+1) % 7 == 0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
     }
-     document.getElementById("alphabet").innerHTML = tresc_diva; 
+    document.getElementById("alphabet").innerHTML = tresc_diva; 
 }
 
-function losuj_haslo() {
-    var x = Math.floor((Math.random() * hasla.length));
-    haslo = hasla[x]
+function losuj_haslo(category) {
+    var x = Math.floor((Math.random() * hasla[category].length));
+    haslo = hasla[category][x]
     haslo = haslo.toUpperCase();
     haslo1 = ""
     for (var i=0; i<haslo.length; i++) {
@@ -199,8 +201,13 @@ function ukryjHaslo() {
     document.getElementById('password').innerHTML = haslo1;
 }
 
+function pokaz_wisielca() {
+    var obraz = "img/g"+ile_bledow+".png";
+    var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
+}
+
 String.prototype.ustawZnak = function(miejsce, znak) {
-    if (miejsce > this.length -1) return this.toString();
+    if (miejsce > this.length - 1) return this.toString();
     else return this.substr(0, miejsce) + znak + this.substr(miejsce+1);
 }
 
@@ -232,9 +239,7 @@ function sprawdz(nr) {
         
         //błąd
         ile_bledow++;
-        var obraz = "img/g"+ile_bledow+".png";
-       
-        var obrazek = document.getElementById("gallows").innerHTML = "<img src='"+obraz+"' alt=''/>";
+        pokaz_wisielca();
     }
     //wygrana
     if (haslo == haslo1) {

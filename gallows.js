@@ -171,15 +171,7 @@ function wypisz_litery() {
     for (i=0; i<=34; i++) {
         var element = "lit" + i;
         tresc_diva = tresc_diva + '<div class="litera" id="'+element+'" onclick="sprawdz('+i+')">'+litery[i]+'</div>';
-<<<<<<< HEAD
-<<<<<<< HEAD
         if ((i+1) % 7 == 0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
-=======
-        if ((i+1) % 7 ==0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
->>>>>>> 33a46b2af5e861225026d1ba602dfb5315a570fc
-=======
-        if ((i+1) % 7 ==0) tresc_diva = tresc_diva + '<div style="clear:both;"></div>'
->>>>>>> 33a46b2af5e861225026d1ba602dfb5315a570fc
     }
      document.getElementById("alphabet").innerHTML = tresc_diva; 
 }
